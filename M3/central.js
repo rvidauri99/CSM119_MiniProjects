@@ -23,10 +23,10 @@ noble.on('stateChange', async (state) => {
 
 noble.on('discover', async (peripheral) => {
     await noble.stopScanningAsync();
+    console.log("pepe")
     await peripheral.connectAsync();
-    const {
-        characteristics
-    } = await peripheral.discoverSomeServicesAndCharacteristicsAsync([uuid_service], [uuid_value]);
+    console.log("hehe")
+    const {characteristics} = await peripheral.discoverSomeServicesAndCharacteristicsAsync([uuid_service], [uuid_value]);
     readData(characteristics[0])
 });
 
